@@ -1,4 +1,5 @@
-const express = require("express")
+const app = require("./src/app") 
+
 const app = express()
 require("dotenv").config()
 const stripe = require("stripe")("sk_test_51N0v1YCwOWyVBlDMWC6YFPjMvjlMtAPqlHvV0kFUNR969WYIJCWvAGRYP1cyWlazHYdcf7JhKBOzOeTUUklGSX9o00UW2HBQ9E")
@@ -36,6 +37,6 @@ app.post("/payment", cors(), async (req, res) => {
 })
 
 
-// app.listen(process.env.PORT || 4000, () => {
-// 	console.log("Sever is listening on port 4000")
-// })
+app.listen(process.env.PORT || 4000, () => {
+	console.log("Sever is listening on port 4000")
+})
